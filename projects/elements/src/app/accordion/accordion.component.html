@@ -1,0 +1,8 @@
+<article>
+  <header class="header" (click)="toggle()">
+    <strong>{{headerTitle}}</strong>
+  </header>
+  <div class="content" *ngIf="open">
+    <ng-content></ng-content>
+  </div>
+</article>

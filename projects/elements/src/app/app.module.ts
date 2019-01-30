@@ -1,16 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {DoBootstrap, Injector, NgModule} from '@angular/core';
+import {AccordionComponent} from './accordion/accordion.component';
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AccordionComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [AccordionComponent]
 })
-export class AppModule { }
+export class AppModule implements DoBootstrap {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    customElements.define('aaw-accordion', createCustomElement(AccordionComponent, {injector: this.injector}));
+  }
+}

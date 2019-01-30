@@ -1,0 +1,13 @@
+:host {
+  background-color: #efefef;
+}
+
+.header {
+  cursor: pointer;
+  padding: 20px;
+  background-color: #bdbdbd;
+}
+
+.content {
+  padding: 20px;
+}
