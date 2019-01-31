@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "union": {
+      "factory": "./union",
+      "description": "Create a discriminated union type.",
+      "schema": "./union/schema.json"
+    }
+  }
+}

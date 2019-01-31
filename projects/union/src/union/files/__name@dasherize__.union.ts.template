@@ -1,0 +1,22 @@
+export type <%= classify(name) %><%= classify(discriminator) %> = 'A' | 'B' | 'C';
+
+export interface <%= classify(name) %>Base {
+  <%= camelize(discriminator) %>: <%= classify(name) %><%= classify(discriminator) %>;
+}
+
+export interface A extends <%= classify(name) %>Base {
+  <%= camelize(discriminator) %>: 'A';
+  a: 1;
+}
+
+export interface B extends <%= classify(name) %>Base {
+  <%= camelize(discriminator) %>: 'B';
+  b: 2;
+}
+
+export interface C extends <%= classify(name) %>Base {
+  <%= camelize(discriminator) %>: 'C';
+  c: 3;
+}
+
+export type <%= classify(name) %> = A | B | C;

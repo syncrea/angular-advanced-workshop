@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsUnion",
+  "title": "Angular Discriminated Union Type schematics",
+  "type": "object",
+  "description": "Generates a new, discriminated union type for the given or default project.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the type alias for the union.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the union?"
+    },
+    "discriminator": {
+      "type": "string",
+      "description": "The name of the discriminator property on the stub interfaces.",
+      "default": "kind",
+      "x-prompt": "What name would you like to use for discriminator property?"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path at which to create the union definition, relative to the current workspace.",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project in which to create the union. Default is the configured default project for the workspace.",
+      "$default": {
+        "$source": "projectName"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "discriminator"
+  ]
+}
