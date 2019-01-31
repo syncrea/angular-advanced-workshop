@@ -29,6 +29,10 @@
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
+            ],
+            "lazyModules": [
+              "projects/shell/src/micro-apps/app1/micro-app1.module",
+              "projects/shell/src/micro-apps/app2/micro-app2.module"
             ]
           },
           "configurations": {
@@ -98,76 +102,6 @@
             "tsConfig": [
               "projects/shell/tsconfig.app.json",
               "projects/shell/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "micro-app1": {
-      "root": "projects/micro-app1",
-      "sourceRoot": "projects/micro-app1/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/micro-app1/tsconfig.lib.json",
-            "project": "projects/micro-app1/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/micro-app1/src/test.ts",
-            "tsConfig": "projects/micro-app1/tsconfig.spec.json",
-            "karmaConfig": "projects/micro-app1/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/micro-app1/tsconfig.lib.json",
-              "projects/micro-app1/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "micro-app2": {
-      "root": "projects/micro-app2",
-      "sourceRoot": "projects/micro-app2/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/micro-app2/tsconfig.lib.json",
-            "project": "projects/micro-app2/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/micro-app2/src/test.ts",
-            "tsConfig": "projects/micro-app2/tsconfig.spec.json",
-            "karmaConfig": "projects/micro-app2/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/micro-app2/tsconfig.lib.json",
-              "projects/micro-app2/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

@@ -5,7 +5,7 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -20,16 +20,16 @@
     ],
     "paths": {
       "micro-app1": [
-        "dist/micro-app1"
+        "projects/micro-app1"
       ],
       "micro-app1/*": [
-        "dist/micro-app1/*"
+        "projects/micro-app1/*"
       ],
       "micro-app2": [
-        "dist/micro-app2"
+        "projects/micro-app2"
       ],
       "micro-app2/*": [
-        "dist/micro-app2/*"
+        "projects/micro-app2/*"
       ]
     }
   }
