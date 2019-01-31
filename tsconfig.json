@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "micro-app1": [
+        "dist/micro-app1"
+      ],
+      "micro-app1/*": [
+        "dist/micro-app1/*"
+      ],
+      "micro-app2": [
+        "dist/micro-app2"
+      ],
+      "micro-app2/*": [
+        "dist/micro-app2/*"
+      ]
+    }
   }
 }
