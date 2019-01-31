@@ -1,9 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation, ɵmarkDirty as markDirty} from '@angular/core';
 
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.css']
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AccordionComponent {
   open = false;
@@ -11,5 +12,6 @@ export class AccordionComponent {
 
   toggle(open?: boolean) {
     this.open = open !== undefined ? open : !this.open;
+    markDirty(this);
   }
 }

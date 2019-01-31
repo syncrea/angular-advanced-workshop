@@ -1,13 +1,13 @@
-:host {
+app-accordion {
   background-color: #efefef;
 }
 
-.header {
+app-accordion > article > .header {
   cursor: pointer;
   padding: 20px;
   background-color: #bdbdbd;
 }
 
-.content {
+app-accordion > article > .content {
   padding: 20px;
 }
