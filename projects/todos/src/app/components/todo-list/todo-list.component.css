@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+.intro {
+  font-weight: bold;
+  margin-bottom: 20px;
+}

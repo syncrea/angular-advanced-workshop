@@ -1,0 +1,5 @@
+<app-todo-list
+  [todoItems]="todoItems | async"
+  (outToggleDone)="toggleDone($event)"
+  (outShowDetails)="showDetails($event)">
+</app-todo-list>

@@ -1,0 +1,9 @@
+<div [class.checkbox-done]="todoItem.done"
+     (click)="toggleDone(); $event.stopPropagation()"
+     (keydown.enter)="toggleDone()"
+     class="checkbox"
+     tabindex="0"></div>
+<div [class.title-done]="todoItem.done"
+     class="title">
+  {{todoItem.title}}
+</div>
