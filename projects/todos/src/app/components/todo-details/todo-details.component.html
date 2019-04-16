@@ -15,7 +15,7 @@
             class="input-field input-field-textarea">
   </textarea>
 </label>
-<button (click)="applyChanges(title.value, description.value, todoItem.done)"
+<button (click)="applyChanges(title.value, description.value, todoItem?.done)"
         class="apply-changes">
   {{applyButtonText}}
 </button>
