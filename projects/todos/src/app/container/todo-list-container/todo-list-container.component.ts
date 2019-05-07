@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {TodoService} from '../../service/todo.service';
 import {Observable} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../state/app.state';
 
 @Component({
   selector: 'app-todo-list-container',
@@ -15,8 +17,9 @@ export class TodoListContainerComponent {
   todoItems: Observable<TodoItem[]>;
 
   constructor(private todoService: TodoService,
-              private router: Router) {
-    this.todoItems = todoService.loadTodos();
+              private router: Router,
+              private store: Store<AppState>) {
+    this.todoItems = this.store.select(state => state.todo.todoItems);
   }
 
   toggleDone(todoItem: TodoItem) {

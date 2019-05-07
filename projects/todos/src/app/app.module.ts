@@ -13,6 +13,13 @@ import {CreateTodoContainerComponent} from './container/create-todo-container/cr
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TodoDb} from './todo.db';
+import {ActionReducerMap, StoreModule} from '@ngrx/store';
+import {AppState, initialAppState} from './state/app.state';
+import {todoReducer} from './state/todo/todo.reducer';
+
+const reducers: ActionReducerMap<AppState> = {
+  todo: todoReducer
+};
 
 @NgModule({
   declarations: [
@@ -27,8 +34,9 @@ import {TodoDb} from './todo.db';
   imports: [
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot(reducers),
     HttpClientInMemoryWebApiModule.forRoot(TodoDb, {
-      delay: 0
+      delay: 1000
     }),
     RouterModule.forRoot([{
       path: 'todos',
