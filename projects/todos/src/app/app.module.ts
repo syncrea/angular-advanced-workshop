@@ -16,6 +16,8 @@ import {TodoDb} from './todo.db';
 import {ActionReducerMap, StoreModule} from '@ngrx/store';
 import {AppState} from './state/app.state';
 import {todoReducer} from './state/todo/todo.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {TodoEffects} from './state/todo/todo.effects';
 
 const reducers: ActionReducerMap<AppState> = {
   todo: todoReducer
@@ -35,6 +37,9 @@ const reducers: ActionReducerMap<AppState> = {
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([
+      TodoEffects
+    ]),
     HttpClientInMemoryWebApiModule.forRoot(TodoDb, {
       delay: 1000
     }),
