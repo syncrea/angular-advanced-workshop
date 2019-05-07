@@ -14,7 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {TodoDb} from './todo.db';
 import {ActionReducerMap, StoreModule} from '@ngrx/store';
-import {AppState, initialAppState} from './state/app.state';
+import {AppState} from './state/app.state';
 import {todoReducer} from './state/todo/todo.reducer';
 
 const reducers: ActionReducerMap<AppState> = {
