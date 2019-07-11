@@ -2,6 +2,9 @@ import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Router} from '@angular/router';
 import {TodoService} from '../../service/todo.service';
 import {take} from 'rxjs/operators';
+import {Store} from '@ngrx/store';
+import {GlobalState} from '../../state/state';
+import {CreateTodoAction} from '../../state/todo/todo.action';
 
 @Component({
   selector: 'app-create-todo-container',
@@ -10,12 +13,11 @@ import {take} from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateTodoContainerComponent {
-  constructor(private todoService: TodoService,
+  constructor(private store: Store<GlobalState>,
               private router: Router) {}
 
   createTodo(title: string, description: string) {
-    this.todoService.createTodo(title, description)
-      .pipe(take(1))
-      .subscribe(() => this.router.navigate(['/todos']));
+    this.store.dispatch(new CreateTodoAction(title, description));
+    this.router.navigate(['/todos']);
   }
 }
