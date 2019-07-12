@@ -1,4 +1,5 @@
 import {Action} from '@ngrx/store';
+import {TodoItem} from '../../model/todo';
 
 export class CreateTodoAction implements Action {
   readonly type = 'CreateTodoAction';
@@ -9,4 +10,19 @@ export class CreateTodoAction implements Action {
   }
 }
 
-export type TodoAction = CreateTodoAction;
+export class CreateTodoSuccessAction implements Action {
+  readonly type = 'CreateTodoSuccessAction';
+
+  constructor(public readonly todoItem: TodoItem) {
+
+  }
+}
+
+export class CreateTodoFailedAction implements Action {
+  readonly type = 'CreateTodoFailedAction';
+}
+
+export type TodoAction =
+  CreateTodoAction |
+  CreateTodoSuccessAction |
+  CreateTodoFailedAction;

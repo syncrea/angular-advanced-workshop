@@ -3,18 +3,21 @@ import {TodoAction} from './todo.action';
 
 export function todoReducer(state: TodoState = initialTodoState, action: TodoAction): TodoState {
   switch (action.type) {
+    case 'CreateTodoSuccessAction': {
+      return {
+        ...state,
+        loading: false,
+        items: [
+          action.todoItem,
+          ...state.items
+        ]
+      };
+    }
+
     case 'CreateTodoAction': {
       return {
         ...state,
-        items: [
-          {
-            id: 1,
-            title: action.title,
-            description: action.description,
-            done: false
-          },
-          ...state.items
-        ]
+        loading: true
       };
     }
 

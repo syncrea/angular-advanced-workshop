@@ -15,11 +15,13 @@ import {GlobalState} from '../../state/state';
 })
 export class TodoListContainerComponent {
   todoItems: Observable<TodoItem[]>;
+  loading: Observable<boolean>;
 
   constructor(private todoService: TodoService,
               private router: Router,
               private store: Store<GlobalState>) {
     this.todoItems = store.select(state => state.todo.items);
+    this.loading = store.select(state => state.todo.loading);
   }
 
   toggleDone(todoItem: TodoItem) {

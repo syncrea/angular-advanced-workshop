@@ -1,7 +1,5 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Router} from '@angular/router';
-import {TodoService} from '../../service/todo.service';
-import {take} from 'rxjs/operators';
 import {Store} from '@ngrx/store';
 import {GlobalState} from '../../state/state';
 import {CreateTodoAction} from '../../state/todo/todo.action';
